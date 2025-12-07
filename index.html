@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Q2 Earnings – Interactive Report</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Core reveal.js styles -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/reveal.css">
+  <!-- Theme -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/theme/league.css" id="theme">
+
+  <!-- Code syntax highlighting theme -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/plugin/highlight/monokai.css" id="highlight-theme">
+
+  <style>
+    /* Small tweak for financial tables */
+    .kpi-table {
+      font-size: 0.9em;
+      border-collapse: collapse;
+      margin: 1.5rem auto;
+    }
+    .kpi-table th, .kpi-table td {
+      border: 1px solid #ccc;
+      padding: 0.5rem 0.8rem;
+      text-align: right;
+    }
+    .kpi-table th:first-child,
+    .kpi-table td:first-child {
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+
+    <!-- TITLE SLIDE -->
+    <section>
+      <h2>Q2 Earnings Report</h2>
+      <h4>Modern Interactive Presentation</h4>
+      <p>Technical Consultant – Major Financial Institution</p>
+      <p style="margin-top:1.5rem;font-size:0.8em;">
+        Contact: <strong>24f2004315@ds.study.iitm.ac.in</strong>
+      </p>
+
+      <!-- Speaker notes -->
+      <aside class="notes">
+        Welcome everyone to the Q2 earnings presentation.
+        Briefly introduce yourself as the technical consultant and mention that
+        this deck showcases modern, interactive capabilities using RevealJS.
+      </aside>
+    </section>
+
+    <!-- MARKDOWN SLIDE (REQUIRED) -->
+    <section data-markdown>
+      <textarea data-template>
+## Q2 At a Glance
+
+- **Revenue growth**: **+12% YoY**
+- **Net income margin**: **18%**
+- **Return on equity (ROE)**: **14.5%**
+- **Cost-to-income ratio**: **52%**
+
+> For questions or follow-ups, email  
+> **24f2004315@ds.study.iitm.ac.in**
+
+Note:
+- Highlight the topline metrics only.
+- Emphasize YoY growth and profitability before going into detail.
+      </textarea>
+    </section>
+
+    <!-- KPI TABLE WITH FRAGMENTS -->
+    <section>
+      <h3>Key Financial KPIs</h3>
+      <table class="kpi-table">
+        <thead>
+          <tr>
+            <th>KPI</th>
+            <th>Q2 FY24</th>
+            <th>Q2 FY25</th>
+            <th>∆ YoY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="fragment fade-in">
+            <td>Revenue (₹ bn)</td>
+            <td>120.0</td>
+            <td>134.4</td>
+            <td>+12.0%</td>
+          </tr>
+          <tr class="fragment fade-in">
+            <td>Net Income (₹ bn)</td>
+            <td>21.0</td>
+            <td>24.1</td>
+            <td>+14.8%</td>
+          </tr>
+          <tr class="fragment fade-in">
+            <td>ROE</td>
+            <td>13.2%</td>
+            <td>14.5%</td>
+            <td>+130 bps</td>
+          </tr>
+          <tr class="fragment fade-in">
+            <td>Cost / Income</td>
+            <td>54.5%</td>
+            <td>52.0%</td>
+            <td>-250 bps</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <aside class="notes">
+        Reveal each row as you speak.
+        Connect revenue growth to margin expansion and cost discipline.
+        Mention that numbers are illustrative if this is a demo.
+      </aside>
+    </section>
+
+    <!-- ANIMATED BULLETS USING FRAGMENTS -->
+    <section>
+      <h3>Drivers of Performance</h3>
+      <ul>
+        <li class="fragment fade-in">Strong retail loan growth in secured products</li>
+        <li class="fragment fade-in">Improved asset quality with lower credit costs</li>
+        <li class="fragment fade-in">Digital channel adoption reducing servicing costs</li>
+        <li class="fragment fade-in">Disciplined capital allocation and risk management</li>
+      </ul>
+
+      <aside class="notes">
+        Use this slide to tell the story behind the numbers.
+        Tie each driver back to the KPI table from the previous slide.
+      </aside>
+    </section>
+
+    <!-- CODE SAMPLE WITH SYNTAX HIGHLIGHTING -->
+    <section>
+      <h3>Illustrative Risk Engine Snippet</h3>
+      <p style="font-size:0.8em;">(Python – Probability of Default model)</p>
+
+      <pre><code class="language-python">
+import numpy as np
+
+def probability_of_default(score: float) -> float:
+    """
+    Simple logistic PD model.
+    score: credit score (higher is better)
+    """
+    # Intercept and coefficient are illustrative
+    intercept = -5.2
+    beta_score = -0.015
+
+    logit = intercept + beta_score * score
+    pd = 1 / (1 + np.exp(-logit))
+    return float(pd)
+
+# Example: client with score 720
+print(probability_of_default(720))
+      </code></pre>
+
+      <aside class="notes">
+        Clarify that this is not a production model,
+        only a simplified example to show how PD can be computed programmatically.
+        Emphasize model governance and validation when discussing real models.
+      </aside>
+    </section>
+
+    <!-- MATH / FINANCIAL FORMULAS -->
+    <section>
+      <h3>Core Financial Formulas</h3>
+
+      <p class="fragment fade-in">
+        <strong>Net Present Value (NPV)</strong> of a cash-flow stream:
+      </p>
+      <p class="fragment fade-in">
+        \[
+          \text{NPV} = \sum_{t=0}^{T} \frac{C_t}{(1 + r)^t}
+        \]
+      </p>
+
+      <p class="fragment fade-in">
+        <strong>Return on Equity (ROE)</strong>:
+      </p>
+      <p class="fragment fade-in">
+        \[
+          \text{ROE} = \frac{\text{Net Income}}{\text{Average Shareholders' Equity}}
+        \]
+      </p>
+
+      <p class="fragment fade-in">
+        <strong>Cost-to-Income Ratio</strong>:
+      </p>
+      <p class="fragment fade-in">
+        \[
+          \text{C/I} = \frac{\text{Operating Expenses}}{\text{Operating Income}}
+        \]
+      </p>
+
+      <aside class="notes">
+        Briefly walk through each formula and connect them to metrics shown earlier.
+        Mention that these formulas underpin valuation and performance analysis.
+      </aside>
+    </section>
+
+    <!-- CLOSING / CONTACT -->
+    <section>
+      <h3>Summary &amp; Next Steps</h3>
+      <ul>
+        <li class="fragment fade-in">Solid topline growth with improving profitability</li>
+        <li class="fragment fade-in">Balanced risk profile with robust capital position</li>
+        <li class="fragment fade-in">Ongoing investments in digital and analytics</li>
+      </ul>
+
+      <p class="fragment fade-in" style="margin-top:2rem;font-size:0.9em;">
+        For follow-up questions or detailed technical walkthroughs:<br>
+        <strong>24f2004315@ds.study.iitm.ac.in</strong>
+      </p>
+
+      <aside class="notes">
+        Recap the three key messages.
+        Invite questions and mention any upcoming deep-dive sessions.
+      </aside>
+    </section>
+
+  </div>
+</div>
+
+<!-- Reveal.js core -->
+<script src="https://unpkg.com/reveal.js@4/dist/reveal.js"></script>
+
+<!-- Plugins: Markdown, Highlight, Notes, Math -->
+<script src="https://unpkg.com/reveal.js@4/plugin/markdown/markdown.js"></script>
+<script src="https://unpkg.com/reveal.js@4/plugin/highlight/highlight.js"></script>
+<script src="https://unpkg.com/reveal.js@4/plugin/notes/notes.js"></script>
+<script src="https://unpkg.com/reveal.js@4/plugin/math/math.js"></script>
+
+<script>
+  Reveal.initialize({
+    hash: true,              // Update URL as you navigate
+    slideNumber: true,       // Show slide numbers
+    plugins: [
+      RevealMarkdown,
+      RevealHighlight,
+      RevealNotes,
+      RevealMath.KaTeX
+    ],
+    // Optional math config (KaTeX is default for this plugin)
+    math: {
+      // You can customize KaTeX here if needed
+    }
+  });
+</script>
+
+</body>
+</html>
